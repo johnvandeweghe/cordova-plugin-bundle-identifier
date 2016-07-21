@@ -12,19 +12,8 @@
 
 @implementation BundleIdentifier
 
-@synthesize callbackIds = _callbackIds;
-
-- (NSMutableDictionary*)callbackIds {
-    if (_callbackIds == nil) {
-        _callbackIds = [[NSMutableDictionary alloc] init];
-    }
-    return _callbackIds;
-}
-
 - (void)get:(CDVInvokedUrlCommand*)command {
     NSLog(@"get:%@", command.arguments);
-
-    [self.callbackIds setValue:command.callbackId forKey:@"get"];
 
     NSString *buildNumber = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey];
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
