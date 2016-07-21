@@ -8,7 +8,6 @@
 
 #import "BundleIdentifier.h"
 #import <Cordova/CDVViewController.h>
-#import <Cordova/CDVDebug.h>
 
 
 @implementation BundleIdentifier
@@ -42,7 +41,7 @@
     [resultDictionary setObject: bundleIconPath forKey: @"bundleIconPath"];
 
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary: resultDictionary];
-    [self writeJavascript:[pluginResult toSuccessCallbackString:[self.callbackIds valueForKey:@"get"]]];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 
