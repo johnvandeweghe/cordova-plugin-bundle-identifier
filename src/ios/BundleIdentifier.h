@@ -10,17 +10,7 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
-@interface BundleIdentifier : CDVPlugin {
-
-  NSMutableDictionary* callbackIds;
-//    NSString * phoneNumber;
-//    NSString * messageText;
-
-}
-
-@property (nonatomic, retain) NSMutableDictionary* callbackIds;
-//@property (nonatomic, retain) NSString *phoneNumber;
-//@property (nonatomic, retain) NSString *messageText;
+@interface BundleIdentifier : CDVPlugin
 
 - (void)get:(CDVInvokedUrlCommand*)command;
 
